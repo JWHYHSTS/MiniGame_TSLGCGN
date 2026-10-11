@@ -10,4 +10,4 @@ http.createServer((req,res)=>{
     if(!file.startsWith(root+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404);res.end('Not found');return;}
     res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});fs.createReadStream(file).pipe(res);
   }catch(_){res.writeHead(400);res.end('Bad request');}
-}).listen(port,host,()=>console.log(`Trig Expedition listening on ${host}:${port}`));
+}).listen(port,host,()=>console.log(`Mechanical Fortress listening on ${host}:${port}`));

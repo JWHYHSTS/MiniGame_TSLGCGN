@@ -1,0 +1,11 @@
+{
+  "source": "Trig-Expedition.zip, version 0",
+  "files": {
+    "data/questions.json": "aca96f8437a60b36a72473d6a53c1fdb140e27c40fc47970ab79b5002924abf5",
+    "js/math-engine.js": "b5e81251da7b657027e15ce6f53a4e0decc103244f7a0841644d504ad109d65d",
+    "js/triangle.js": "0424524d5f0dd87d05bcb77fe9d998908294c37653173231f09de348d7702234",
+    "js/question-engine.js": "c66fd9574b88a78bc71bc86f308917313e9ba5d11ccfcb69f2394240c4b3ec68",
+    "js/validator.js": "8c8ca17ea8e207c66f295a5c19c4d6a2f7fa472f02ef40981615fe826e8073e8"
+  },
+  "questionCount": 228
+}

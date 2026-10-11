@@ -1,0 +1,1 @@
+(function(T){'use strict';class Renderer{constructor(canvas,engine){this.canvas=canvas;this.engine=engine;engine.attachCanvas(canvas)}draw(){this.engine.draw()}ingest(){return []}}T.DefenseRenderer=Renderer;})(Trig);

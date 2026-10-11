@@ -2,14 +2,16 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#081d29">
-  <meta name="description" content="Trig Expedition — Mission 90°. Game phiêu lưu luyện tỉ số lượng giác góc nhọn Toán 9, Bài 11, trang 66–70.">
-  <title>Trig Expedition · Mission 90°</title>
-  <link rel="icon" href="assets/icons/compass.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#12232c">
+  <meta name="description" content="Pháo đài Cơ Khí: game thủ thành và luyện tỉ số lượng giác Toán 9. Đặt tháp dọc đường, robot gác chặn địch, sáu khu và Titan Bánh Răng.">
+  <title>Pháo đài Cơ Khí · Trigonometry Defense</title>
+  <link rel="icon" href="assets/icons/gear.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/game.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/fortress.css">
+  <link rel="stylesheet" href="css/route.css">
   <script defer src="js/config.js"></script>
   <script defer src="js/math-engine.js"></script>
   <script defer src="js/triangle.js"></script>
@@ -19,28 +21,26 @@
   <script defer src="js/storage.js"></script>
   <script defer src="js/audio.js"></script>
   <script defer src="js/ui.js"></script>
-  <script defer src="js/scenery.js"></script>
   <script defer src="js/maps/map1.js"></script>
   <script defer src="js/maps/map2.js"></script>
   <script defer src="js/maps/map3.js"></script>
   <script defer src="js/maps/map4.js"></script>
   <script defer src="js/maps/map5.js"></script>
-  <script defer src="js/boss.js"></script>
+  <script defer src="js/route-data.js"></script>
+  <script defer src="js/defense-engine.js"></script>
+  <script defer src="js/defense-renderer.js"></script>
   <script defer src="js/achievements.js"></script>
   <script defer src="js/game.js"></script>
   <script defer src="js/teacher.js"></script>
   <script defer src="js/app.js"></script>
 </head>
 <body data-scene="menu">
-  <div class="landscape" aria-hidden="true"></div>
-  <div class="atmosphere" aria-hidden="true"></div>
-  <canvas id="ambience" aria-hidden="true"></canvas>
+  <div class="factory-backdrop" aria-hidden="true"></div>
   <header class="topbar"><button id="brand" aria-label="Menu chính"></button><div class="topbar-tools"><button class="icon-button" id="teacher-button" aria-label="Chế độ giáo viên" title="Chế độ giáo viên"></button><span class="tool-divider"></span><button class="icon-button" id="audio-button" aria-label="Tắt âm thanh"></button><button class="icon-button" id="fullscreen-button" aria-label="Toàn màn hình" title="Toàn màn hình"></button><button class="icon-button" id="settings-button" aria-label="Cài đặt" title="Cài đặt"></button></div></header>
-  <div class="portrait-tip">Xoay ngang thiết bị để có trải nghiệm tốt nhất.</div>
   <main id="app"></main>
-  <dialog id="dialog" aria-label="Hộp thoại hành trình"></dialog>
+  <dialog id="dialog" aria-label="Bảng điều khiển pháo đài"></dialog>
   <div id="toasts" role="status" aria-live="polite"></div>
-  <div id="loading"><div class="loading-compass">✧</div><p>Đang chuẩn bị hành trình…</p></div>
-  <noscript>Bạn cần bật JavaScript để chơi Trig Expedition.</noscript>
+  <div id="loading"><div class="loading-compass">⚙</div><p>Đang khởi động pháo đài…</p></div>
+  <noscript>Bật JavaScript để chơi Pháo đài Cơ Khí.</noscript>
 </body>
 </html>

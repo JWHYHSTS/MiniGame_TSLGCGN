@@ -1,12 +1,12 @@
 {
-  "name": "trig-expedition",
-  "version": "1.0.0",
+  "name": "mechanical-fortress",
+  "version": "3.1.0",
   "private": true,
-  "description": "Offline-first grade-9 trigonometry expedition game",
+  "description": "Offline mechanical tower defense with the unchanged grade-9 trigonometry question bank",
   "scripts": {
     "dev": "node tools/serve.cjs",
     "start": "node tools/serve.cjs",
-    "test": "node tests/run-tests.cjs",
+    "test": "node tests/run-tests.cjs && node tests/defense-tests.cjs",
     "export-bank": "node tools/export-bank.cjs"
   }
 }

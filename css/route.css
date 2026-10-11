@@ -1,0 +1,219 @@
+/* Controls occupy their own rows; only the board and its hit targets overlap. */
+.battle-mode{overflow:hidden;background:#0b171e;font-family:'Segoe UI',Arial,sans-serif}
+.battle-mode>.topbar,.battle-mode .factory-backdrop{display:none}
+.battle-mode #app{height:100vh;height:100dvh;min-height:0;padding:0;max-width:none;margin:0}
+.route-screen{height:100%;min-height:0;display:grid;grid-template-rows:64px minmax(0,1fr) auto;--edge:#ad976a44;color:#edf4ee}
+.route-screen [hidden]{display:none!important}
+.route-hud{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px;padding:8px 14px;background:#0a141d;border-bottom:1px solid #71888733}
+.route-resources,.route-tools{display:flex;align-items:center;gap:8px;min-width:0}
+.route-tools{justify-content:flex-end}
+.route-icon{display:grid;place-items:center;background:linear-gradient(#28404a,#1a2d36);border:1px solid #8ca7a440;border-radius:10px;min-width:42px;height:42px;color:#e3ede6;font-size:1rem;font-weight:750;padding:8px;flex-shrink:0}
+.route-icon:hover{border-color:#dcc098}
+.route-icon .icon{width:20px;height:20px}
+.route-stat{height:42px;min-width:76px;padding:8px 10px;display:flex;align-items:center;gap:8px;border:1px solid #8ca7a43d;background:linear-gradient(#253c46,#172b35);border-radius:10px}
+.route-stat>.icon{width:19px;color:#dbb985}
+.route-stat b{font-size:1rem;font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap}
+.route-wave{text-align:center;min-width:180px;max-width:280px}
+.route-wave small{display:block;color:#adbbb6;font-size:.65rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.route-wave>b{font-size:.85rem;display:block;margin:3px 0 5px;font-weight:800}
+.route-progress{height:4px;background:#30474f;border-radius:9px;overflow:hidden}
+.route-progress>i{display:block;background:var(--zone);height:100%;transition:width .4s}
+.route-tools>#game-timer{font-size:.68rem;color:#879d9d;margin-right:4px;font-variant-numeric:tabular-nums}
+.route-stage{min-width:0;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr) 26px;background:#0d1b25}
+.route-controls{display:grid;grid-template-columns:minmax(130px,.65fr) minmax(260px,1.5fr) minmax(220px,1fr);gap:10px;align-items:center;padding:7px 12px;background:#11212b;border-bottom:1px solid #71888726}
+.route-field-tools{display:flex;gap:6px;align-items:center;min-width:0}
+.route-field-tools .secondary{font-family:inherit;letter-spacing:0;font-weight:700;min-height:36px;font-size:.67rem;padding:8px 10px;background:#1b323d;border-radius:9px;white-space:nowrap;gap:6px}
+.route-field-tools .secondary .icon{width:18px;height:18px}
+.route-field-tools .route-icon{min-width:32px;height:32px;border-radius:8px;font-size:.88rem}
+.route-wave-banner{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--edge);border-radius:12px;background:#0b1d29;padding:8px 12px;min-width:0;min-height:54px}
+.route-wave-banner>div{min-width:0}
+.route-wave-banner b{font-size:.7rem;display:block;line-height:1.4;overflow-wrap:anywhere}
+.route-wave-banner small{display:block;color:#92adae;font-size:.61rem;line-height:1.4;margin-top:3px}
+.route-wave-banner .primary{font-family:inherit;letter-spacing:0;font-weight:800;font-size:.74rem;min-height:35px;padding:8px 12px;border-radius:8px;white-space:nowrap;flex-shrink:0}
+.route-wave-banner.fighting>button{display:none}
+.route-intel{min-width:0;max-height:76px;overflow:auto;scrollbar-width:thin}
+.route-intel.inspecting .route-preview{display:none}
+.route-preview{border-left:2px solid var(--zone);padding:0 10px;min-width:0}
+.route-preview>span{font-size:.52rem;font-weight:850;color:var(--zone);letter-spacing:.06em;display:inline-block;margin-right:7px}
+.route-preview>b{font-size:.65rem;line-height:1.4}
+.route-preview small{display:block;color:#a1b5b7;font-size:.59rem;line-height:1.4;margin-top:3px}
+.route-preview p{font-size:.56rem;color:#bdcec8;line-height:1.4;margin-top:3px}
+.route-enemy{border-left:2px solid #dfbe7b;display:flex;align-items:center;gap:8px;padding:2px 10px;min-width:0}
+.route-enemy img{width:38px;height:38px;flex-shrink:0}
+.route-enemy>div{min-width:0}
+.route-enemy b{font-size:.68rem;line-height:1.4}
+.route-enemy small{display:block;color:#acc5c0;font-size:.59rem;line-height:1.4;margin-top:2px}
+.route-board{position:relative;min-width:0;min-height:0;overflow:hidden;background:radial-gradient(ellipse,#1f343d,#0d1b25);isolation:isolate}
+/* This selector beats the legacy #battle-canvas rule in fortress.css. */
+.route-board #battle-canvas{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:block;width:100%;height:100%;max-width:100%;max-height:100%;aspect-ratio:1280/720;object-fit:contain;touch-action:none}
+.route-slots{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;max-width:100%;max-height:100%}
+.route-slots>button{position:absolute;transform:translate(-50%,-50%);width:4.85%;aspect-ratio:1;pointer-events:auto;border:0;background:transparent;border-radius:50%;padding:0;touch-action:manipulation}
+.route-slots>button:hover,.route-slots>button:focus-visible{background:#ffe6b529;outline:2px solid #ffdeb7;outline-offset:2px}
+.route-slots>.occupied{background:transparent}
+.route-slots>.selected{box-shadow:0 0 0 2px #ddb879a8}
+.route-bottom-status{display:flex;justify-content:space-between;align-items:center;gap:12px;min-width:0;padding:4px 12px;background:#0c1b25;border-top:1px solid #9eb2aa20}
+.route-bottom-status>span{font-size:.61rem;color:#bccfc8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.route-bottom-status>b{color:#e0c592;font-size:.62rem;white-space:nowrap;flex-shrink:0}
+.route-bottom-status>b:empty{display:none}
+.route-dock{display:grid;grid-template-columns:20px minmax(0,3.6fr) minmax(240px,1.3fr);align-items:stretch;gap:8px;padding:8px 10px;background:#0a151f;border-top:1px solid #9fb2aa24;min-width:0}
+.dock-caption{writing-mode:vertical-rl;transform:rotate(180deg);font-size:.54rem;letter-spacing:.12em;font-weight:850;color:#a7bdb4;text-align:center;align-self:center}
+.route-shop{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;min-width:0;height:108px}
+.route-tower-card{display:flex;align-items:center;gap:7px;border:1px solid #89a9a538;border-radius:12px;background:linear-gradient(150deg,#233a42,#152b35);padding:8px;text-align:left;touch-action:none;user-select:none;cursor:grab;min-width:0;color:#e8f0e9;overflow:hidden}
+.route-tower-card:hover,.route-tower-card.active{border-color:var(--tower);box-shadow:0 0 16px #89a18d17}
+.route-tower-card img{width:38px;height:44px;flex-shrink:0;pointer-events:none;-webkit-user-drag:none}
+.route-tower-card>div{min-width:0}
+.route-tower-card b{display:block;font-size:clamp(.6rem,.8vw,.75rem);line-height:1.25;font-weight:800}
+.route-tower-card strong{display:block;color:#b2e8bc;font-size:.72rem;margin:4px 0;font-weight:800}
+.route-tower-card small{font-size:.56rem;color:#acc1bb;line-height:1.35;display:block}
+.route-tower-card .drag-hint{display:inline-block;font-size:.45rem;line-height:1.4;margin-top:4px;color:#9ddfd5;font-weight:800}
+.route-tower-card.locked{filter:grayscale(.85);opacity:.4;cursor:default}
+.route-tower-card.unaffordable{opacity:.66}
+.route-tower-card.dragging{opacity:.6;cursor:grabbing}
+.route-selected{position:relative;background:linear-gradient(150deg,#233943,#142931);border:1px solid #89a9a53a;border-radius:12px;padding:8px;display:grid;grid-template-columns:40px minmax(0,1fr);gap:5px;align-content:start;align-items:center;min-width:0;max-height:108px;overflow:auto;scrollbar-width:thin}
+.route-selected img{width:40px;height:46px}
+.route-selected b{display:block;font-size:.66rem;font-weight:800;line-height:1.3}
+.route-selected:not(.empty) b{padding-right:16px}
+.route-selected small{font-size:.58rem;color:#afc5bf;line-height:1.4;display:block;margin-top:3px}
+.route-selected.empty{display:flex;align-items:center}
+.route-selected.empty b{font-size:.67rem;color:#d7c098}
+.route-selected.empty .text-button{font-family:inherit;min-height:24px;font-size:.58rem;padding:5px 0;letter-spacing:0}
+.route-panel-close{position:absolute;top:2px;right:3px;border:0;background:transparent;color:#c1d1c8;font-size:1rem;width:24px;height:24px;padding:0}
+.route-tower-actions{grid-column:1/-1;display:flex;gap:5px}
+.route-tower-actions>button{font-family:inherit;min-height:26px;font-size:.57rem;padding:6px 8px;letter-spacing:0;border-radius:7px;flex:1;white-space:nowrap}
+.route-branches{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+.route-branches>.secondary{display:flex;flex-direction:column;align-items:center;gap:9px;padding:20px;text-align:center;letter-spacing:0;font-family:inherit}
+.route-branches b{font-size:.95rem}
+.route-branches small{font-size:.85rem;line-height:1.6;font-weight:400}
+.route-branches span{font-size:1.8rem}
+.route-drag-ghost{position:fixed;z-index:9999;width:88px;border:2px solid #e9c39280;border-radius:14px;background:#102932ed;padding:7px;pointer-events:none;box-shadow:0 12px 30px #0009;text-align:center}
+.route-drag-ghost img{width:63px;height:63px}
+.route-drag-ghost b{font-size:.56rem;display:block;color:#d5e2d9}
+.route-drag-ghost.valid{border-color:#8aefb3}
+.route-drag-ghost.invalid{border-color:#f19b85}
+
+@media(max-width:1200px){
+  .route-hud{gap:8px;padding:8px 10px}
+  .route-stat{min-width:66px;padding:8px}
+  .route-stat b{font-size:.9rem}
+  .route-tools>#game-timer{display:none}
+  .route-tower-card{padding:6px;gap:3px;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+  .route-tower-card img{width:32px;height:35px}
+  .route-tower-card small{display:none}
+  .route-tower-card strong{margin:3px 0}
+  .route-tower-card b{font-size:.61rem}
+  .route-tower-card .drag-hint{font-size:.41rem;margin-top:2px}
+  .route-dock{grid-template-columns:16px minmax(0,3fr) minmax(220px,1.2fr)}
+}
+@media(max-width:1000px){
+  .route-screen{grid-template-rows:58px minmax(0,1fr) auto}
+  .route-score{display:none}
+  .route-stat,.route-icon{height:38px}
+  .route-icon{min-width:38px}
+  .route-wave{min-width:160px}
+  .route-resources,.route-tools{gap:5px}
+  .route-controls{grid-template-columns:140px minmax(0,1fr) 190px;padding:6px 8px;gap:8px}
+  .route-preview small{display:none}
+  .route-wave-banner{padding:7px 9px;min-height:50px;gap:7px}
+  .route-wave-banner b{font-size:.64rem}
+  .route-wave-banner .primary{font-size:.65rem;padding:8px;min-height:32px}
+  .route-shop{height:92px}
+  .route-selected{max-height:92px;padding:6px;grid-template-columns:32px minmax(0,1fr);gap:4px}
+  .route-selected img{width:32px;height:36px}
+  .route-selected b{font-size:.62rem}
+  .route-selected small{font-size:.54rem;margin-top:2px}
+  .route-tower-actions>button{font-size:.52rem;min-height:24px;padding:5px 6px}
+  .route-dock{grid-template-columns:14px minmax(0,1fr) 210px;padding:6px 8px;gap:6px}
+}
+@media(max-width:760px){
+  .route-hud{grid-template-columns:auto minmax(0,1fr) auto;gap:7px;padding:6px 7px}
+  .route-wave{min-width:0;max-width:none}
+  .route-wave small{font-size:.54rem}
+  .route-wave>b{font-size:.66rem;white-space:nowrap}
+  .route-stat{min-width:0;height:35px;padding:6px;gap:4px;border-radius:8px}
+  .route-stat b{font-size:.77rem}
+  .route-stat>.icon{width:14px;height:16px}
+  .route-icon{min-width:33px;height:35px;padding:6px;border-radius:8px;font-size:.9rem}
+  .route-icon .icon{width:17px;height:17px}
+  .route-tools [data-audio]{display:none}
+  .route-controls{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;padding:6px 8px}
+  .route-wave-banner{grid-column:1/-1;grid-row:1;min-height:44px}
+  .route-field-tools{grid-column:1;grid-row:2}
+  .route-field-tools .secondary{font-size:.6rem;min-height:32px;padding:6px 8px}
+  .route-intel{grid-column:2;grid-row:2;max-height:64px}
+  .route-preview{padding:0 7px}
+  .route-preview>b{font-size:.58rem;display:block}
+  .route-preview>span{font-size:.49rem}
+  .route-preview p{display:none}
+  .route-enemy{padding:0 7px;gap:5px}
+  .route-enemy img{width:26px;height:26px}
+  .route-enemy b{font-size:.57rem}
+  .route-enemy small{font-size:.52rem}
+  .route-dock{grid-template-columns:12px minmax(0,1fr);gap:5px;padding:6px}
+  .dock-caption{grid-column:1;grid-row:1;font-size:.46rem}
+  .route-shop{grid-column:2;grid-row:1;height:88px;gap:5px;overflow-x:auto;grid-template-columns:repeat(5,minmax(82px,1fr));scrollbar-width:thin}
+  .route-tower-card{border-radius:9px;padding:5px}
+  .route-tower-card b{font-size:.58rem}
+  .route-tower-card img{width:29px;height:30px}
+  .route-tower-card .drag-hint{font-size:.39rem}
+  .route-selected{grid-column:2;grid-row:2;grid-template-columns:30px minmax(0,1fr) 100px;max-height:88px;padding:6px;gap:5px}
+  .route-selected.empty{display:none}
+  .route-selected img{width:30px;height:34px}
+  .route-selected:not(.empty) b{padding-right:0}
+  .route-selected>div:not(.route-tower-actions){padding-right:4px}
+  .route-tower-actions{grid-column:3;grid-row:1;flex-direction:column;padding-right:15px}
+  .route-tower-actions>button{min-height:25px;font-size:.5rem;padding:5px 3px}
+  .route-bottom-status{padding:4px 8px;gap:7px}
+  .route-bottom-status>span,.route-bottom-status>b{font-size:.54rem}
+  .route-slots>button{min-width:20px;min-height:20px}
+  .route-branches{grid-template-columns:1fr}
+  .route-drag-ghost{width:70px;padding:5px}
+  .route-drag-ghost img{width:50px;height:50px}
+}
+@media(max-width:420px){
+  .route-resources,.route-tools{gap:3px}
+  .route-stat{padding:6px 5px;gap:3px}
+  .route-stat b{font-size:.68rem}
+  .route-wave small{font-size:.49rem}
+  .route-wave>b{font-size:.6rem}
+  .route-wave-banner b{font-size:.59rem}
+  .route-wave-banner small{font-size:.54rem}
+  .route-wave-banner .primary{font-size:.59rem;min-height:30px;padding:7px 8px}
+}
+@media(max-height:600px) and (min-width:761px){
+  .route-screen{grid-template-rows:48px minmax(0,1fr) auto}
+  .route-hud{padding:5px 8px}
+  .route-icon,.route-stat{height:34px}
+  .route-wave>b{font-size:.71rem;margin:2px 0 4px}
+  .route-controls{padding:4px 8px}
+  .route-wave-banner{min-height:42px;padding:5px 8px}
+  .route-wave-banner b{font-size:.61rem}
+  .route-wave-banner small{font-size:.54rem;margin-top:1px}
+  .route-wave-banner .primary{min-height:29px;font-size:.61rem;padding:7px 8px}
+  .route-intel{max-height:46px}
+  .route-preview p{display:none}
+  .route-stage{grid-template-rows:auto minmax(0,1fr) 22px}
+  .route-bottom-status>span,.route-bottom-status>b{font-size:.54rem}
+  .route-shop{height:76px}
+  .route-tower-card{flex-direction:row;text-align:left;gap:4px;padding:5px}
+  .route-tower-card img{width:26px;height:30px}
+  .route-tower-card b{font-size:.54rem}
+  .route-tower-card .drag-hint{display:none}
+  .route-selected{max-height:76px;grid-template-columns:26px minmax(0,1fr);padding:5px;gap:3px}
+  .route-selected img{width:26px;height:30px}
+  .route-selected b{font-size:.58rem}
+  .route-selected small{font-size:.51rem;line-height:1.3}
+  .route-tower-actions>button{font-size:.49rem;min-height:22px;padding:4px 5px}
+  .route-dock{padding:5px 8px}
+}
+@media(max-height:480px) and (max-width:760px){
+  .route-screen{grid-template-rows:46px minmax(0,1fr) auto}
+  .route-controls{padding:3px 7px;gap:4px}
+  .route-wave-banner{min-height:36px;padding:4px 7px}
+  .route-intel{max-height:32px}
+  .route-field-tools .secondary{min-height:28px}
+  .route-stage{grid-template-rows:auto minmax(0,1fr) 22px}
+  .route-shop{height:68px}
+  .route-tower-card .drag-hint{display:none}
+  .route-tower-card img{width:24px;height:25px}
+  .route-selected{max-height:64px}
+}

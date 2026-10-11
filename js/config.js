@@ -1,14 +1,13 @@
-/* One public configuration file. A local teacher PIN is an interface lock, not server security. */
 globalThis.Trig = globalThis.Trig || {};
 Trig.CONFIG = Object.freeze({
-  VERSION: '1.0.0', TEACHER_PASSWORD: '05067379', SAVE_KEY: 'trig-expedition-v1',
-  SESSION_KEY: 'trig-expedition-session-v1', BASE_SCORE: 100,
-  MAPS: [
-    {id:1,name:'BASE CAMP',title:'Bí mật ba cạnh',brief:'Gắn dây leo. Đọc đúng hình. Mở đường lên núi.',mechanic:'Chạm cạnh · Kéo nhãn',color:'#62e5c3',altitude:'480 m',count:10,crystal:'SIN',scene:'camp'},
-    {id:2,name:'FOUR TRIG GATES',title:'Bốn cánh cổng',brief:'Lắp các tỉ số để đánh thức bốn cánh cổng cổ.',mechanic:'Lắp công thức · Mở cổng',color:'#e9b666',altitude:'1.260 m',count:10,crystal:'COS',scene:'gates'},
-    {id:3,name:'TRIANGLE CANYON',title:'Vực thẳm tam giác',brief:'Tính tỉ số. Dựng từng nhịp cầu vượt qua vực.',mechanic:'Tính toán · Dựng cầu',color:'#f6a778',altitude:'2.140 m',count:10,crystal:'TAN',scene:'canyon'},
-    {id:4,name:'CRYSTAL TEMPLE',title:'Đền 30° – 45° – 60°',brief:'Ghi nhớ dấu ấn. Ghép tinh thể. Thắp sáng ngôi đền.',mechanic:'Ghi nhớ · Ghép tinh thể',color:'#c9a4ff',altitude:'3.050 m',count:12,crystal:'COT',scene:'temple'},
-    {id:5,name:'TWIN PEAKS',title:'Hai đỉnh phụ nhau',brief:'Nối các tỉ số bằng nhau để tạo cầu ánh sáng.',mechanic:'Kết nối · Góc phụ nhau',color:'#98dcff',altitude:'4.200 m',count:10,crystal:'90°',scene:'peaks'},
-    {id:6,name:'GUARDIAN OF 90°',title:'Người gác Đỉnh 90°',brief:'Phá bốn lớp khiên. Chinh phục lõi năng lượng 90°.',mechanic:'Chiến đấu · 5 giai đoạn',color:'#ffc969',altitude:'5.090 m',count:15,crystal:'CORE',scene:'boss'}
+  VERSION:'3.1.0', TEACHER_PASSWORD:'05067379', SAVE_KEY:'mechanical-fortress-v3',
+  SESSION_KEY:'mechanical-fortress-session-v3', BASE_SCORE:100,
+  MAPS:[
+    {id:1,name:'XƯỞNG ĐÚC',title:'Tuyến phòng thủ đầu tiên',brief:'Robot đi theo băng chuyền đến căn cứ cuối đường. Đọc bản vẽ ba cạnh để cấp năng lượng cho pháo đài.',mechanic:'Nhận biết cạnh · Đặt tháp dọc băng chuyền',color:'#ffc179',altitude:'KHU 01',count:10,crystal:'SIN',scene:'foundry'},
+    {id:2,name:'THÁP ĐỒNG HỒ',title:'Bánh răng thời gian',brief:'Robot men theo băng chuyền ngoằn ngoèo giữa bánh răng. Lắp công thức để mở mạch phòng thủ.',mechanic:'Lắp tỉ số · Tuyến đường ngoằn ngoèo',color:'#79d8dd',altitude:'KHU 02',count:10,crystal:'COS',scene:'clock'},
+    {id:3,name:'MẠNG ĐƯỜNG ỐNG',title:'Áp suất dưới lòng đất',brief:'Các đường ống bẻ hướng đoàn robot. Tính tỉ số để vận hành xưởng cơ khí.',mechanic:'Tính tỉ số · Đường robot gấp khúc',color:'#a8caa1',altitude:'KHU 03',count:10,crystal:'TAN',scene:'pipes'},
+    {id:4,name:'ĐƯỜNG RAY THÉP',title:'Chuyến tàu nổi loạn',brief:'Robot tăng tốc trên đường ray. Ghi nhớ tinh thể 30°, 45°, 60° để cấp năng lượng.',mechanic:'Ghi nhớ giá trị · Robot tăng tốc',color:'#c6b0f1',altitude:'KHU 04',count:12,crystal:'COT',scene:'rail'},
+    {id:5,name:'XƯỞNG TRÊN KHÔNG',title:'Liên kết hai mạch',brief:'Drone và robot đi theo tuyến cầu treo đến căn cứ. Nối hai góc phụ nhau để hoàn thiện phòng tuyến.',mechanic:'Nối góc phụ · Phòng thủ drone',color:'#a2d7f5',altitude:'KHU 05',count:10,crystal:'90°',scene:'skyforge'},
+    {id:6,name:'THÀNH TRÌ TITAN',title:'Trái tim của Pháo đài Cơ Khí',brief:'Mười lăm đợt tấn công, năm nhóm bản vẽ. Đối đầu Titan Bánh Răng ở đợt cuối.',mechanic:'Tổng hợp 5 kỹ năng · Titan Bánh Răng',color:'#f5ad79',altitude:'KHU 06',count:15,crystal:'CORE',scene:'citadel'}
   ]
 });

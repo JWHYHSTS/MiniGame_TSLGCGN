@@ -1,0 +1,217 @@
+{
+  "date": "2026-10-11T03:52:07.392Z",
+  "passed": 52,
+  "failed": 0,
+  "total": 52,
+  "browserTest": false,
+  "results": [
+    {
+      "name": "Unchanged original bank and four mathematical modules, exact SHA-256",
+      "passed": true
+    },
+    {
+      "name": "Six unique paths; exactly twelve spots per map, 72 overall",
+      "passed": true
+    },
+    {
+      "name": "All 72 spots lie outside the road and within useful attack range",
+      "passed": true
+    },
+    {
+      "name": "Base has no autonomous attack; unbuilt battlefield leaves enemy HP unchanged",
+      "passed": true
+    },
+    {
+      "name": "Five tower types, unlocks consistent with reference progression",
+      "passed": true
+    },
+    {
+      "name": "Build and sell barracks, reject occupied and invalid slots",
+      "passed": true
+    },
+    {
+      "name": "Build and sell archer, reject occupied and invalid slots",
+      "passed": true
+    },
+    {
+      "name": "Build and sell ice, reject occupied and invalid slots",
+      "passed": true
+    },
+    {
+      "name": "Build and sell magic, reject occupied and invalid slots",
+      "passed": true
+    },
+    {
+      "name": "Build and sell tesla, reject occupied and invalid slots",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch barracks/guardian changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch barracks/assault changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch archer/rapid changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch archer/pierce changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch ice/blizzard changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch ice/frostbolt changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch magic/nova changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch magic/arcane changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch tesla/chain changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Level-3 branch tesla/overload changes real stats and cannot be chosen twice",
+      "passed": true
+    },
+    {
+      "name": "Unaffordable placement and upgrade do not alter currency or towers",
+      "passed": true
+    },
+    {
+      "name": "Coordinate conversion compensates for letterboxed Canvas; drag/drop spends once",
+      "passed": true
+    },
+    {
+      "name": "Barracks creates guard robot that blocks and trades damage with one enemy",
+      "passed": true
+    },
+    {
+      "name": "Selling guard workshop removes guards and releases blocked enemies",
+      "passed": true
+    },
+    {
+      "name": "Cryo slows actual enemy movement; armored damage and shield absorb correctly",
+      "passed": true
+    },
+    {
+      "name": "Tesla hits multiple enemies and laser uses moving projectiles",
+      "passed": true
+    },
+    {
+      "name": "Kill rewards are granted once; corpse hits cannot farm energy",
+      "passed": true
+    },
+    {
+      "name": "Boss skill triggers in map 1",
+      "passed": true
+    },
+    {
+      "name": "Boss skill triggers in map 2",
+      "passed": true
+    },
+    {
+      "name": "Boss skill triggers in map 3",
+      "passed": true
+    },
+    {
+      "name": "Boss skill triggers in map 4",
+      "passed": true
+    },
+    {
+      "name": "Boss skill triggers in map 5",
+      "passed": true
+    },
+    {
+      "name": "Boss skill triggers in map 6",
+      "passed": true
+    },
+    {
+      "name": "Fatal boss escape fails the map, without a false victory",
+      "passed": true
+    },
+    {
+      "name": "Repairing a failed wave preserves towers and answered math currency",
+      "passed": true
+    },
+    {
+      "name": "Paid base repair allowed between waves, capped and charged accurately",
+      "passed": true
+    },
+    {
+      "name": "Snapshot restores live projectile references and identical future gameplay",
+      "passed": true
+    },
+    {
+      "name": "Complete all 10 waves of map 1 using earned currency",
+      "passed": true
+    },
+    {
+      "name": "Complete all 10 waves of map 2 using earned currency",
+      "passed": true
+    },
+    {
+      "name": "Complete all 10 waves of map 3 using earned currency",
+      "passed": true
+    },
+    {
+      "name": "Complete all 12 waves of map 4 using earned currency",
+      "passed": true
+    },
+    {
+      "name": "Complete all 10 waves of map 5 using earned currency",
+      "passed": true
+    },
+    {
+      "name": "Complete all 15 waves of map 6 using earned currency",
+      "passed": true
+    },
+    {
+      "name": "Canvas and all 72 slot targets fit the board at wide, zoomed, portrait and landscape sizes",
+      "passed": true
+    },
+    {
+      "name": "Selecting an enemy uses the separate information area and restores wave preview when it dies",
+      "passed": true
+    },
+    {
+      "name": "Controller blocks wave until math is solved and awards it only once",
+      "passed": true
+    },
+    {
+      "name": "Math dialog and pause freeze combat at x1/x2/x3",
+      "passed": true
+    },
+    {
+      "name": "Save restores attempts, hint, scratch, speed, towers and a live wave",
+      "passed": true
+    },
+    {
+      "name": "Teacher preview leaves real progress untouched; PIN retained",
+      "passed": true
+    },
+    {
+      "name": "Completion records results and does not recreate a resume slot",
+      "passed": true
+    },
+    {
+      "name": "All six groups retain original per-run questions, 67 in total",
+      "passed": true
+    },
+    {
+      "name": "All HTML/CSS/route SVG resources are local and exist",
+      "passed": true
+    }
+  ]
+}
